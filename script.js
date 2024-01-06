@@ -2,7 +2,6 @@ const cars = ["rock", "paper", "scissor"]
 
 function getComputerChoice() {
     let choice = Math.floor((Math.random() * 10) + 1)%3
-    console.log(cars[choice])
     return cars[choice];
   }
 
@@ -19,29 +18,46 @@ function getUserChoice(){
 }
 
 function playRound(playerSelection, computerSelection) {
-    // Ensure the input is in lowercase for case-insensitive comparison
-
-    // Check for a tie
+    console.log(playerSelection+" "+ computerSelection)
     if (playerSelection === computerSelection) {
-        return "It's a tie!";
+        return "tie";
     }
 
     // Check for Rock
     if (playerSelection === 'rock') {
-        return (computerSelection === 'scissors') ? 'You Win!' : 'Computer Win!';
+        return (computerSelection === 'scissors') ? 'You' : 'Computer';
     }
 
     // Check for Paper
     if (playerSelection === 'paper') {
-        return (computerSelection === 'rock') ? 'You Win!' : 'Computer Win!';
+        return (computerSelection === 'rock') ? 'You' : 'Computer';
     }
 
     // Check for Scissors
     if (playerSelection === 'scissors') {
-        return (computerSelection === 'paper') ? 'You Win!' : 'Computer Win!';
+        return (computerSelection === 'paper') ? 'You' : 'Computer';
     }
   }
 
-//   getComputerChoice()
-// getUserChoice()
-console.log(playRound("rock",getComputerChoice()) )
+
+function game(){
+    let user = 0
+    let computer = 0
+    for (let i = 0; i < 5; i++) {
+        let winner = playRound(getUserChoice(),getComputerChoice())
+        if (winner == 'You'){
+            user++;
+        }
+        if (winner == 'Computer'){
+            computer++;
+        }
+      }
+      if(user == computer){
+        return "Tie"
+      } else if (user > computer){
+        return "you won"
+      }else {
+        return "computer won"
+      }
+}
+console.log(game())
