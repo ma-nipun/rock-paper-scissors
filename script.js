@@ -60,4 +60,9 @@ function game(){
         return "computer won"
       }
 }
-console.log(game())
+
+function game_gui(){
+  let winner = game()
+  document.getElementById("winner").innerHTML = winner;
+}
+// console.log(game())

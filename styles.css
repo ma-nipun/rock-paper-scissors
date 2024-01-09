@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Roboto:wght@300;400&display=swap");
+
+:root {
+  --main-light-clr: #f3eed9;
+  --main-medium-clr: #824936;
+  --main-dark-clr: #222c2a;
+}
+
+
+.header {
+  background-color: var(--main-light-clr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 660px;
+}
+
+h1 {
+  /* font-family: "Playfair Display", serif; */
+  color: var(--main-medium-clr);
+  font-size: 3.75rem;
+  text-align: center;
+}
